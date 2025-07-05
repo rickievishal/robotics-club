@@ -1,8 +1,10 @@
 import Image from "next/image";
+import HeroOverlay from "./components/HeroOverlay";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen relative overflow-hidden">
+   <div className="w-screen flex flex-col">
+     <div className="w-screen h-screen relative overflow-hidden">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         autoPlay
@@ -11,13 +13,11 @@ export default function Home() {
       >
         <source src="assets/hero.mp4" type="video/mp4" />
       </video>
-
-      {/* Add content here if needed */}
-      <div className="relative w-full flex flex-col justify-center items-center top-[62%] translate-middle ">
-        <div className="max-w-lg min-w-[300px] lg:min-w-sm flex justify-start items-center">
-          <button className="bg-[#05ff48] text-black text-4xl -tracking-[3px] rounded-r-full rounded-l-full px-4 ">Join now</button>
-        </div>
-      </div>
+      <HeroOverlay/>
     </div>
+    <div className="w-full h-screen">
+
+    </div>
+   </div>
   );
 }
